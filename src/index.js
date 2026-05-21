@@ -1,12 +1,12 @@
-const express = require("express")
-const cors = require("cors")
+import express, { urlencoded, json, static } from "express";
+import cors from "cors";
 
 const PORT = 8082;
 const app = express();
 app.use(cors());
-app.use(express.urlencoded({ extended: false }))
-app.use(express.json())
-app.use(express.static('public'))
+app.use(urlencoded({ extended: false }))
+app.use(json())
+app.use(static('public'))
 
 const articles = [
   {
